@@ -31,7 +31,7 @@ export function NameEdit({ user, contact, notify, onSave }: Props) {
       console.log(e)
       notify({
         status: 'error',
-        message: 'Something went wrong.'
+        message: (e as Error).message || 'Something went wrong.'
       })
     } finally {
       setIsSaving(false)
