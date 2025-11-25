@@ -1,6 +1,6 @@
 {
   "name": "My Contact App",
-  "icon": "./icon.png",
+  "icon": "./static/icon.png",
   "version": "",
   "build": "1653421766",
   "inputs": [],
