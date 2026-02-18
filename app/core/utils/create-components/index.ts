@@ -4,6 +4,9 @@ export function createComponents(Components: CoreComponents): CoreComponents {
   return {
     Logo: memo((props: LogoProps) => Components.Logo(props)),
     DatePicker: Components.DatePicker,
+    SingleEmailComposeDrawer: memo((props: SingleEmailComposeDrawerProps) =>
+      Components.SingleEmailComposeDrawer(props)
+    ),
     Wizard: {
       QuestionWizard: memo((props: QuestionWizardProps) =>
         Components.Wizard.QuestionWizard(props)

@@ -1,11 +1,16 @@
 declare type UUID = string
 declare type Optional<T> = T | undefined
 declare interface Window {
-  libs: Record<'React' | 'MaterialUi' | 'ReactUse', any>
+  libs: Record<'React' | 'MaterialUi' | 'ReactUse', any> & {
+    Components?: {
+      SingleEmailComposeDrawer: React.FC<SingleEmailComposeDrawerProps>
+    }
+  }
 }
 declare interface CoreComponents {
   Logo: React.FC<LogoProps>
   DatePicker: React.FC<DatePickerProps>
+  SingleEmailComposeDrawer: React.FC<SingleEmailComposeDrawerProps>
   Wizard: {
     QuestionWizard: React.FC<QuestionWizardProps>
     QuestionSection: React.FC<QuestionSectionProps>
