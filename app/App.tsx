@@ -1,6 +1,6 @@
-import React from '@libs/react'
 import ReactUse from '@libs/react-use'
 
+import { EmailComposer } from './EmailComposer'
 import { NameEdit } from './NameEdit'
 
 export function App({
@@ -19,6 +19,11 @@ export function App({
         contact={contact}
         notify={notify}
         onSave={updateContact}
+      />
+
+      <EmailComposer
+        contact={contact}
+        SingleEmailComposeDrawer={SingleEmailComposeDrawer}
       />
 
       {/* <Ui.Button variant="contained" color="primary" onClick={close}>
