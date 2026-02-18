@@ -6,7 +6,7 @@ import { NameEdit } from './NameEdit'
 export function App({
   models: { user, contact },
   api: { updateContact, close },
-  Components: { DatePicker: DayPicker, Wizard },
+  Components: { DatePicker: DayPicker, Wizard, SingleEmailComposeDrawer },
   utils: { notify },
   hooks
 }: EntryProps) {
