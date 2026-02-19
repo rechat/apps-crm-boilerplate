@@ -1,12 +1,13 @@
+import Ui from '@libs/material-ui'
+import React from '@libs/react'
 import ReactUse from '@libs/react-use'
 
-import { EmailComposer } from './EmailComposer'
 import { NameEdit } from './NameEdit'
 
 export function App({
   models: { user, contact },
   api: { updateContact, close },
-  Components: { DatePicker: DayPicker, Wizard, SingleEmailComposeDrawer },
+  Components: { DatePicker: DayPicker, Wizard, SingleEmailComposeForm },
   utils: { notify },
   hooks
 }: EntryProps) {
@@ -21,10 +22,21 @@ export function App({
         onSave={updateContact}
       />
 
-      <EmailComposer
-        contact={contact}
-        SingleEmailComposeDrawer={SingleEmailComposeDrawer}
-      />
+      <Ui.Box flex={1} overflow="auto">
+        <SingleEmailComposeForm
+          initialValues={{
+            to: contact.email
+              ? [
+                  {
+                    email: contact.email,
+                    recipient_type: 'Email'
+                  }
+                ]
+              : []
+          }}
+          disableAddNewRecipient={false}
+        />
+      </Ui.Box>
 
       {/* <Ui.Button variant="contained" color="primary" onClick={close}>
         Close App

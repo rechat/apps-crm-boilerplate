@@ -3,14 +3,14 @@ declare type Optional<T> = T | undefined
 declare interface Window {
   libs: Record<'React' | 'MaterialUi' | 'ReactUse', any> & {
     Components?: {
-      SingleEmailComposeDrawer: React.FC<SingleEmailComposeDrawerProps>
+      SingleEmailComposeForm: React.FC<SingleEmailComposeFormProps>
     }
   }
 }
 declare interface CoreComponents {
   Logo: React.FC<LogoProps>
   DatePicker: React.FC<DatePickerProps>
-  SingleEmailComposeDrawer: React.FC<SingleEmailComposeDrawerProps>
+  SingleEmailComposeForm: React.FC<SingleEmailComposeFormProps>
   Wizard: {
     QuestionWizard: React.FC<QuestionWizardProps>
     QuestionSection: React.FC<QuestionSectionProps>
