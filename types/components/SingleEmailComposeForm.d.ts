@@ -6,12 +6,18 @@ declare interface SingleEmailComposeFormProps {
     from?: string
     subject?: string
     body?: string
-    attachments?: any[]
+    attachments?: IFile[]
   }
   onClose?: () => void
-  onSent?: (email: any) => void
+  onSent?: (
+    email: IEmailCampaign<
+      'emails' | 'template' | 'from' | 'recipients',
+      'contact',
+      'email'
+    >
+  ) => void
   disableAddNewRecipient?: boolean
   emailId?: string
-  deal?: any
+  deal?: IDeal
   headers?: Record<string, string>
 }
